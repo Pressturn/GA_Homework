@@ -129,7 +129,7 @@ Complete Exercise 10 in the space below:
 
 const hasSoup = foods.includes('soup')
 console.log('Exercise 10 result:', hasSoup);
-
+git config user.name
 /*
 Exercise 11: Odd numbers from an array
 
