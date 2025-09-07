@@ -98,7 +98,7 @@ const App = () => {
       console.log("Not Enough Money.");
       return;
     }
-    setTeam(prev => [...prev, fighter]);
+    setTeam(team => [...team, fighter]);
     setZombieFighters(zombieFighters => zombieFighters.filter(f => f.id !== fighter.id))
     setMoney(currentAmount => currentAmount - fighter.price)
   }
