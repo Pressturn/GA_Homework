@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import StarshipSearch from './components/StarshipSearch/StarshipSearch'
 import StarshipList from './components/StarshipList/StarshipList'
 import { getStarships } from './services/starshipService'
+import './app.css'
 
 function App() {
   const [starshipsData, setStarshipsData] = useState([])
