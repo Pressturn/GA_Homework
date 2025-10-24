@@ -43,12 +43,15 @@ const signIn = async (req, res) => {
       req.body.password,
       userInDatabase.password
     );
+      console.log('Password valid:', validPassword);  
     if (!validPassword) {
       return res.send("Login failed. Please try again.");
     }
 
     // There is a user AND they had the correct password. Time to make a JWT!
-    const claims = { username: userInDatabase.username };
+    const claims = { 
+      username: userInDatabase.username,
+     };
 
     const access = jwt.sign(claims, process.env.ACCESS_SECRET, {
       expiresIn: "15m",
@@ -60,9 +63,10 @@ const signIn = async (req, res) => {
       jwtid: uuidv4(),
     });
 
+        console.log('Tokens created successfully');  
     res.json({ access, refresh });
   } catch (error) {
-    console.log(error);
+        console.log('Sign-in error:', error);  
     res.redirect("/");
   }
 };
